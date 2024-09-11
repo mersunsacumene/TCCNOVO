@@ -1,8 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
+import Medicamentos from './Medicamentos.jsx'
 import {BrowserRouter, Routes, Route, NavLink} from 'react-router-dom'
 import './index.css'
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,7 +23,7 @@ createRoot(document.getElementById('root')).render(
     <main className=''>
     <Routes>
       <Route path='/home' element={<App />}/>
-      <Route path='/home' element={<App />}/>
+      <Route path='/medicamentos' element={<Medicamentos />}/>
       <Route path='/home' element={<App />}/>
       <Route path='/home' element={<App />}/>
     </Routes>
