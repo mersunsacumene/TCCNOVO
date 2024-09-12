@@ -78,7 +78,7 @@ function Medicamentos() {
   const [search, setSearch] = useState("");
   return (
     <>
-      <section className="px-20 bg-AzulEscuro">
+      <section className="px-20 bg-AzulEscuro min-h-screen">
         <form className="py-10 flex justify-center">
           <label
             htmlFor="search"
