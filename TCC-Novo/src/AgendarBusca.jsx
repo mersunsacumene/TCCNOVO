@@ -4,12 +4,12 @@ import { useParams } from "react-router-dom";
 
 function AgendarBusca() {
   const { id } = useParams();
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState(null);
   useEffect(() => {
     setProduct(remedies.find((p) => p.id == id));
     console.log(remedies.find((p) => p.id == id));
   }, [id]);
-  if (product === null) {
+  if (product == null) {
     return <p> {id} Product nao encontrado!!</p>;
   }
   return (
@@ -18,7 +18,7 @@ function AgendarBusca() {
         <div className="rounded-2xl p-6 flex justify-center h-max w-full">
           <img src={product.url} alt="imagem" className="w-96 h-96" />
         </div>
-        <div className="flex flex-col gap-6 items-center justify-center w-full">
+        <div className="flex flex-col gap-20 items-center justify-center w-full">
           <h1 className="text-white font-bold text-2xl text-center">
             {product.name} - {product.dosage}
           </h1>
@@ -36,14 +36,22 @@ function AgendarBusca() {
         </div>
       </div>
       <div className="flex flex-row justify-center">
-        <iframe
-          src=""
-          frameborder="0"
-          width={512}
-          height={512}
-          className="w-96 h-96"
-        ></iframe>
-        <div>{product.maps[0].url}</div>
+        <div className="flex justify-center w-full">
+          <iframe
+            src={product.maps[0].url}
+            frameborder="0"
+            width={512}
+            height={512}
+            className="w-96 h-96"
+          ></iframe>
+        </div>
+        <div className="flex flex-col justify-center items-center w-full gap-4">
+          {product.maps.map((m, i) => (
+            <span className="bg-white p-4 rounded-xl w-max h-max" key={i}>
+              {m.addres}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

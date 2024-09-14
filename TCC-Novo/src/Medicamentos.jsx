@@ -43,7 +43,7 @@ function Medicamentos() {
                   </span>
                   <a
                     className="bg-Laranja p-4 text-white rounded-full text-center"
-                    href={`/agendarbusca/${r.id}`}
+                    href={`/medicamentos/${r.id}`}
                   >
                     Ver Produto
                   </a>
