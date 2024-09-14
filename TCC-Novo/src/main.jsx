@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import Agendamentos from "./Agendamentos.jsx";
 import Medicamentos from "./Medicamentos.jsx";
 import { createRoot } from "react-dom/client";
-import Agendar from "./AgendarBusca.jsx";
+import AgendarBusca from "./AgendarBusca.jsx";
 import Cadastro from "./Cadastro.jsx";
 import { StrictMode } from "react";
 import Login from "./Login.jsx";
@@ -17,9 +17,9 @@ function Layout() {
     <>
       {!hidelocations.includes(location.pathname) && (
         <header className="bg-AzulEscuro text-white flex flex-row items-center justify-between px-20 py-2">
-          <a href="/home">
+          <NavLink to="/home">
             <img src="LogoPequeno.png" alt="logoSuperior" />
-          </a>
+          </NavLink>
           <nav className="flex flex-row gap-6 text-2xl">
             <NavLink
               to="/home"
@@ -55,7 +55,7 @@ function Layout() {
           <Route path="/home" element={<App />} />
           <Route path="/medicamentos" element={<Medicamentos />} />
           <Route path="/agendamentos" element={<Agendamentos />} />
-          <Route path="/agendarbusca/:id" element={<Agendar />} />
+          <Route path="/medicamentos/:id" element={<AgendarBusca />} />
           <Route path="/entrar" element={<Login />} />
           <Route path="/cadastre-se" element={<Cadastro />} />
         </Routes>
